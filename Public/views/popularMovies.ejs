@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KINO V2</title>
-    <link rel="stylesheet" href=" css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -14,11 +14,12 @@
   </head>
   
   <body>
-    <a name="top"></a>
+    <a href="/views/about.ejs">About</a>
+    <a name="home"></a>
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="#top" id="navbar__logo">KINO</a>
+        <a href="#home" id="navbar__logo">KINO</a>
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
@@ -29,7 +30,27 @@
             <input type="submit" value="Search" onclick="searchForMovie()"/>
             <p id="requestText"></p>
             <textarea id="result" cols="200" rows="30"></textarea>
-            
+            <script>
+              function searchForMovie() {
+                var request = new XMLHttpRequest()
+                var title = document.getElementById('movieTitle').value;
+
+                //open new connection, using the GET request on the URL endpoint
+                request.open('GET', 'http://www.omdbapi.com/?t=' + title + '&apikey=f3011be7&', true)
+                document.getElementById('requestText').value= 'http://www.omdbapi.com/?apikey=f3011be7&t=' + title;
+                request.onload = function () {
+                  // Begin accessing JSON data here
+                  var data = JSON.parse(this.response)
+
+                  if (request.status >= 200 && request.status < 400) {
+                  document.getElementById('result').innerHTML = this.response;
+                  } else {
+                    console.log('error')
+                  }
+                }
+                request.send()
+              }
+            </script>
           <li class="navbar__item">
             <a href="#movies" class="navbar__links" id="movie-page">Movies</a>
           </li>
@@ -73,69 +94,8 @@
           <p></p>
           <div class="movies__btn"><button>More Info</button></div>
         </div>
-        <a href="popularMovies">See All ></a>
+        <a href="Public/views/popularMovies.ejs">See All ></a>
       </div>
     </div>
-
-  <!-- TV SHOW Section -->
-    <div class="tvshows" id="tvshows">
-      <h1>Popular TV Shows</h1>
-      
-      <div class="tvshows__wrapper">
-        <div class="tvshows__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="tvshows__btn"><button>More Info</button></div>
-        </div>
-        <div class="tvshows__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="tvshows__btn"><button>More Info</button></div>
-        </div>
-        <div class="tvshows__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="tvshows__btn"><button>More Info</button></div>
-        </div>
-        <div class="tvshows__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="tvshows__btn"><button>More Info</button></div>
-        </div>
-        <a href="popularTVShows">See All ></a>
-      </div>
-    </div>
-
-  <!-- Top 250 Section -->
-    <div class="top250" id="top250">
-      <h1>Top 250 Movies</h1>
-      
-      <div class="top250__wrapper">
-        <div class="top250__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="top250__btn"><button>More Info</button></div>
-        </div>
-        <div class="top250__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="top250__btn"><button>More Info</button></div>
-        </div>
-        <div class="top250__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="top250__btn"><button>More Info</button></div>
-        </div>
-        <div class="top250__card">
-          <h2>Placeholder Text</h2>
-          <p></p>
-          <div class="top250__btn"><button>More Info</button></div>
-        </div>
-      </div>
-      <a href="allTop250">See All ></a>
-    </div>
-
-    <script src="/Public/js/app.js"></script>
-    <script src='/Public/js/main.js'></script>
-  </body>
+  </body>  
 </html>

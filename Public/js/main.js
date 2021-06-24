@@ -1,6 +1,3 @@
-
-
-
 function searchForMovie() {
     var request = new XMLHttpRequest()
     var title = document.getElementById('movieTitle').value;
@@ -39,7 +36,7 @@ menu.addEventListener('click', mobileMenu);
 // Show active menu when scrolling
 const highlightMenu = () => {
   const elem = document.querySelector('.highlight');
-  //const tvshowMenu = document.querySelector('#tvshows-page');
+  const tvshowMenu = document.querySelector('#tvshows-page');
   const moviesMenu = document.querySelector('#movies-page');
   let scrollPos = window.scrollY;
   // console.log(scrollPos);

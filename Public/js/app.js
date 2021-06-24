@@ -12,18 +12,27 @@ app.use(express.static('Public'))
 app.use('/css', express.static(__dirname + 'Public/css'))
 app.use('/js', express.static(__dirname + 'Public/js'))
 app.use('/img', express.static(__dirname + 'Public/img'))
+app.use('/views', express.static(__dirname + 'Public/views'))
 
- 
+
+
+express.static.mime.define({'text/html': ['ejs']
+});
+
+
 // Set Views
-app.set('views', './views')
+app.set('views', './Public/views')
 app.set('view engine', 'ejs')
 
 app.get('', (req, res) => {
   res.render('index')
 })
 
+app.get('/popularMovies', (req, res) => {
+  res.sendFile('popularMovies')
+})
 app.get('/about', (req, res) => {
-  res.render('about', { text: "About Page"})
+  res.render('about', { text: 'hey'})
 })
 
 // d
