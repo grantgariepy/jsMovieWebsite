@@ -23,7 +23,7 @@ const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
 
 
-// imdb.get({name: 'The Lighthouse'}, {f3011be7, timeout: 30000}).then(console.log).catch(console.log);
+
 
 // Display Mobile Menu
 const mobileMenu = () => {
