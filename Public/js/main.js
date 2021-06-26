@@ -1,79 +1,56 @@
-function searchForMovie() {
-    var request = new XMLHttpRequest()
-    var title = document.getElementById('movieTitle').value;
+// imports
+const express = require('express');
+const app = express();
+const port = 3000
+var cors = require('cors')
+app.use(cors())
 
-    //open new connection, using the GET request on the URL endpoint
-    request.open('GET', 'http://www.omdbapi.com/?t=' + title + '&apikey=f3011be7&', true)
-    document.getElementById('requestText').value= 'http://www.omdbapi.com/?apikey=f3011be7&t=' + title;
-    request.onload = function () {
-        // Begin accessing JSON data here
-        var data = JSON.parse(this.response)
+// Listen on port 3000
+app.listen(port, () => console.info(`App listening on port ${port}`))
 
-        if (request.status >= 200 && request.status < 400) {
-            document.getElementById('result').innerHTML = this.response;
-        } else {
-            console.log('error')
-        }
-    }
-    request.send()
-}
+// Static Files
 
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
-const navLogo = document.querySelector('#navbar__logo');
+app.use(express.static('./Public'))
 
+
+app.use('/css', express.static(__dirname + 'Public/css'))
+app.use('/js', express.static(__dirname + 'Public/js'))
+app.use('/img', express.static(__dirname + 'Public/img'))
+app.use('/views', express.static(__dirname + 'Public/views'))
+
+express.static.mime.define({'text/html': ['ejs']
+});
 
 
 
-// Display Mobile Menu
-const mobileMenu = () => {
-  menu.classList.toggle('is-active');
-  menuLinks.classList.toggle('active');
-};
-
-menu.addEventListener('click', mobileMenu);
-
-// Show active menu when scrolling
-const highlightMenu = () => {
-  const elem = document.querySelector('.highlight');
-  const tvshowMenu = document.querySelector('#tvshows-page');
-  const moviesMenu = document.querySelector('#movies-page');
-  let scrollPos = window.scrollY;
-  // console.log(scrollPos);
+// Set Views
+app.set('css', './Public/css')
+app.set('views', './Public/views')
+app.set('view engine', 'ejs')
 
 
-  // adds 'highlight' class to my menu items
-  if (window.innerWidth > 960 && scrollPos < 600) {
-    tvshowMenu.classList.add('highlight');
-    moviesMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 1400) {
-    moviesMenu.classList.add('highlight');
-    tvshowsMenu.classList.remove('highlight');
-    servicesMenu.classList.remove('highlight');
-    return;
-  } else if (window.innerWidth > 960 && scrollPos < 2345) {
-    servicesMenu.classList.add('highlight');
-    aboutMenu.classList.remove('highlight');
-    return;
-  }
+app.get('', (req, res) => {
+  res.render('index')
+})
 
-  if ((elem && window.innerWIdth < 960 && scrollPos < 600) || elem) {
-    elem.classList.remove('highlight');
-  }
-};
+app.get('/popularMovies', (req, res) => {
+  res.render('popularMovies')
+})
 
-window.addEventListener('scroll', highlightMenu);
-window.addEventListener('click', highlightMenu);
+app.get('/popularTVShows', (req, res) => {
+  res.render('popularTVShows')
+})
 
-//  Close mobile Menu when clicking on a menu item
-const hideMobileMenu = () => {
-  const menuBars = document.querySelector('.is-active');
-  if (window.innerWidth <= 768 && menuBars) {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.remove('active');
-  }
-};
+app.get('/top250', (req, res) => {
+  res.render('top250')
+})
 
-menuLinks.addEventListener('click', hideMobileMenu);
-navLogo.addEventListener('click', hideMobileMenu);
+app.get('/about', (req, res) => {
+  res.render('about', { text: 'hey'})
+})
+
+app.get('/searchResult', (req, res) => {
+  res.render('searchResult')
+})
+
+// d
