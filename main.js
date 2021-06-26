@@ -18,12 +18,8 @@ app.use('/js', express.static(__dirname + 'Public/js'))
 app.use('/img', express.static(__dirname + 'Public/img'))
 app.use('/views', express.static(__dirname + 'Public/views'))
 
-
-
-
 express.static.mime.define({'text/html': ['ejs']
 });
-
 
 // Set Views
 app.set('css', './Public/css')
@@ -37,6 +33,14 @@ app.get('', (req, res) => {
 
 app.get('/popularMovies', (req, res) => {
   res.render('popularMovies')
+})
+
+app.get('/popularTVShows', (req, res) => {
+  res.render('popularTVShows')
+})
+
+app.get('/top250', (req, res) => {
+  res.render('top250')
 })
 
 app.get('/about', (req, res) => {
