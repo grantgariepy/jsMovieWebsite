@@ -50,7 +50,7 @@ module.exports = function(app, omdbApi) {
           })
         }
       }
-      getOMDBMovie(title, OMDBCallback)
+      searchOMDB(title, OMDBCallback)
     })
   
     app.get('/about', (req, res) => {

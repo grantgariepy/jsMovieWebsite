@@ -43,16 +43,10 @@
     <body>
       <input onload="searchForMovie()"/>
     </body>
-
-    <ul></ul>
-      <% for (var i = 0; i < result.Search.length; i++) { %>
-      <li>
-        <div><%= result.Search[i].Title %></div>
-        <img src="<%- result.Search[i].Poster %>">
-      </li>
-      <% } %>
-    </ul>
-    
+        
+    <div id="result"><%= result.Title %></div>
+    <div id="result"><%= result.Plot %></div>
+    <img src="<%- result.Poster %>">
     <script type="text/javascript" src="/js/fisplayFunctions.js"></script>
     
   </body>
