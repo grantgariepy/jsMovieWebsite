@@ -27,13 +27,14 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <form action='/views/searchResult.ejs'"">
-              <input id="movieTitle" type="text" />
+            <form action='searchResult' method="POST"">
+              <input id="movieTitle" name="movieTitle" type="text" />
               <input type="submit" value="Search" oninput="searchForMovie()"/>
               <p id="requestText"></p>
+              <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
             </form>
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item"></li>
             <a href="#movies" class="navbar__links" id="movie-page">Movies</a>
           </li>
           <li class="navbar__item">
@@ -137,8 +138,9 @@
       </div>
       <a href="top250">See All ></a>
     </div>
-
+    <script type="text/javascript" src='/js/apps.js'></script>
   </body>
 
 </html>
-  <script src='/js/main.js'></script>
+  
+  

@@ -7,4 +7,8 @@ module.exports = function(app, express) {
     app.set('views', path.join(path.join(__dirname + '/../Public/views')))
     express.static.mime.define({'text/html': ['ejs']})
     app.set('view engine', 'ejs')
+    app.use(express.urlencoded({
+        extended: true
+      }))
+
 }
