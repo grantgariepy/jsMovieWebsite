@@ -1,4 +1,23 @@
-module.exports = function(app, omdbApi, params) {
+module.exports = function(app, omdbApi) {
+
+    // Support Functions
+    function searchOMDB (title, yourFunc) {
+      omdbApi.search({
+        apiKey: 'f3011be7',
+        query: title,
+        type: 'movie'
+      }, yourFunc
+    )}
+
+    function getOMDBMovie (title, yourFunc) {
+      omdbApi.get({
+        apiKey: 'f3011be7',
+        title: title,
+        type: 'movie'
+      }, yourFunc
+    )}
+
+    // Routes
     app.get('', (req, res) => {
         res.render('index')
     })
@@ -21,23 +40,17 @@ module.exports = function(app, omdbApi, params) {
     
     app.post('/searchResult', (req, res) => {
       var title = req.body.movieTitle
-      var response = ""
-
-      var page = function(err, data) {
+      var OMDBCallback = function(err, data) {
         if (err) {
-           console.log(err)
+          console.log(err)
         } else {
+          // console.log(data)
           res.render('searchResult', {
             result: data
           })
         }
       }
-
-      omdbApi.search({
-        apiKey: 'f3011be7',
-        query: "Drive",
-        type: 'movie'
-      },page)
+      getOMDBMovie(title, OMDBCallback)
     })
   
     app.get('/about', (req, res) => {

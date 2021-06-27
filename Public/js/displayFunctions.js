@@ -1,22 +1,6 @@
-function searchForMovie(title) {
-    
-}
-// function appendData(data) {
-//   var mainContainer = document.getElementById('result');
-//   for (var i = 0; i < data.length; i++) {
-//     var div = document.getElementById("div");
-//     div.innerHTML = 'Result:' + data;
-//     mainContainer.appendChild(div);
-//   }
-// }    
-  
-
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.navbar__menu');
 const navLogo = document.querySelector('#navbar__logo');
-
-
-
 
 // Display Mobile Menu
 const mobileMenu = () => {
@@ -33,7 +17,6 @@ const highlightMenu = () => {
   const moviesMenu = document.querySelector('#movies-page');
   let scrollPos = window.scrollY;
   // console.log(scrollPos);
-
 
   // adds 'highlight' class to my menu items
   if (window.innerWidth > 960 && scrollPos < 600) {

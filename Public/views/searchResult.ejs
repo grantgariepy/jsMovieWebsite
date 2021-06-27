@@ -44,7 +44,9 @@
       <input onload="searchForMovie()"/>
     </body>
         
-    <div id="result"><%= result %></div>
+    <div id="result"><%= result.Title %></div>
+    <div id="result"><%= result.Plot %></div>
+    <img src="<%- result.Poster %>">
     <script type="text/javascript" src="/js/apps.js"></script>
     
   </body>
