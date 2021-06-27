@@ -1,11 +1,16 @@
 module.exports = function(app) {
     app.get('', (req, res) => {
         res.render('index')
-      })
+    })
+
+    app.get('/index', (req, res) => {
+        res.render('index')
+    })
     
     app.get('/popularMovies', (req, res) => {
       res.render('popularMovies')
     })
+
     app.get('/top250', (req, res) => {
         res.render('top250')
       })
