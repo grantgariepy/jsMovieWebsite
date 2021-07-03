@@ -12,7 +12,7 @@ module.exports = function(app, omdbApi) {
     function getOMDBMovie (title, yourFunc) {
       omdbApi.get({
         apiKey: 'f3011be7',
-        t: title,
+        title: title,
         // type: 'movie'
       }, yourFunc
     )}

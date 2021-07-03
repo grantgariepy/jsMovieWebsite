@@ -56,16 +56,13 @@
       <li>
         <a><%= result.Search[i].Title %></a>
         <img src="<%- result.Search[i].Poster %>">
-        <!-- <p name="name"><%= result.Search[i].Title %></p>
-        <p name="id"><%= result.Search[i].imdbID %></p> -->
+        <!-- <p id="title" name="title"><%= result.Search[i].Title %></p>
+        <p id="imdbID" name="imdbID"><%= result.Search[i].imdbID %></p> -->
         
       </li>
       <% } %>
         </button>
       </form>
-      <% for (var i = 0; i < result.Search.length; i++) { %>
-      <p name="name"><%= result.Search[i].Title %></p>
-      <% } %>
     </ul>
     
     <script type="text/javascript" src="/js/displayFunctions.js"></script>
