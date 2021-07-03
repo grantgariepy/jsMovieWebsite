@@ -28,7 +28,7 @@
         <ul class="navbar__menu">
           <li class="navbar__item">
             <form action='searchResult' method="POST"">
-              <input id="movieTitle" name="movieTitle" type="text" />
+              <input id="searchTerm" name="searchTerm" type="text" />
               <input type="submit" value="Search" oninput="searchForMovie()"/>
               <p id="requestText"></p>
               <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
@@ -138,7 +138,9 @@
       </div>
       <a href="top250">See All ></a>
     </div>
+
     <script type="text/javascript" src='/js/displayFunctions.js'></script>
+  
   </body>
 
 </html>
