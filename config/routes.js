@@ -12,7 +12,7 @@ module.exports = function(app, omdbApi) {
     function getOMDBMovie (title, yourFunc) {
       omdbApi.get({
         apiKey: 'f3011be7',
-        title: title,
+        t: title,
         // type: 'movie'
       }, yourFunc
     )}
@@ -56,7 +56,7 @@ module.exports = function(app, omdbApi) {
     })
 
     app.post('/movieCard', (req, res) => {
-      var result = req.body.result
+      var title = req.body.name
       var OMDBCallback = function(err, data) {
         if (err) {
           console.log(err)
@@ -67,7 +67,7 @@ module.exports = function(app, omdbApi) {
           })
         }
       }
-      getOMDBMovie(result, OMDBCallback)
+      getOMDBMovie(title, OMDBCallback)
     })
   
     app.get('/about', (req, res) => {

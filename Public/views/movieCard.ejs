@@ -20,19 +20,20 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <input id="movieTitle" type="text" />
-            <input type="submit" value="Search" onclick="searchForMovie()"/>
-            <p id="requestText"></p>
-            <!-- <textarea id="result" cols="200" rows="30"></textarea> -->
-            </li>
+            <form action='searchResult' method="POST"">
+              <input id="searchTerm" name="searchTerm" type="text" />
+              <input type="submit" value="Search" oninput="searchForMovie()"/>
+              <p id="requestText"></p>
+              <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
+            </form>
           <li class="navbar__item">
-            <a href="#movies" class="navbar__links" id="movie-page">Movies</a>
+            <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
           </li>
           <li class="navbar__item">
-            <a href="#tvshows" class="navbar__links" id="tvshow-page">TV Shows</a>
+            <a href="popularTVShows" class="navbar__links" id="tvshow-page">TV Shows</a>
           </li>
           <li class="navbar__item">
-            <a href="#top250" class="navbar__links" id="top250-page">Top 250</a>
+            <a href="top250" class="navbar__links" id="top250-page">Top 250</a>
           </li>
           <li class="navbar__btn">
             <a href="#log-in" class="button" id="login">LogIn</a>
@@ -40,9 +41,7 @@
         </ul>
       </div>
     </nav>
-    <body>
-      <input onload="searchForMovie()"/>
-    </body>
+   
         
     <div id="result"><%= result.Title %></div>
     <div id="result"><%= result.Plot %></div>
