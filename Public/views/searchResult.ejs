@@ -20,19 +20,25 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <input id="movieTitle" type="text" />
-            <input type="submit" value="Search" onclick="searchForMovie()"/>
-            <p id="requestText"></p>
-            <!-- <textarea id="result" cols="200" rows="30"></textarea> -->
-            </li>
+            <form name="searchTerm" action="searchResult" method="post">
+              <label for="query">Search:</label>
+              <input type="text" name="searchTerm" id="query"/>
+              <button>Search</button>
+            </form>
+            
+            <!-- <form action='searchResult' method="POST"">
+              <input id="searchTerm" name="searchTerm" type="text" />
+              <input type="submit" value="Search" />
+              <p id="requestText"></p>
+            </form> -->
           <li class="navbar__item">
-            <a href="#movies" class="navbar__links" id="movie-page">Movies</a>
+            <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
           </li>
           <li class="navbar__item">
-            <a href="#tvshows" class="navbar__links" id="tvshow-page">TV Shows</a>
+            <a href="popularTVShows" class="navbar__links" id="tvshow-page">TV Shows</a>
           </li>
           <li class="navbar__item">
-            <a href="#top250" class="navbar__links" id="top250-page">Top 250</a>
+            <a href="top250" class="navbar__links" id="top250-page">Top 250</a>
           </li>
           <li class="navbar__btn">
             <a href="#log-in" class="button" id="login">LogIn</a>
@@ -40,20 +46,25 @@
         </ul>
       </div>
     </nav>
-    <body>
-      <input onload="searchForMovie()"/>
-    </body>
+    
 
     <ul></ul>
-      <% for (var i = 0; i < result.Search.length; i++) { %>
+      <form method="post" action="movieCard" class="inline">
+        <input type="hidden" name="name" >
+        <button type="submit" name="submit_param" value="submit_value" class="link-button">
+          <% for (var i = 0; i < result.Search.length; i++) { %>
       <li>
-        <div><%= result.Search[i].Title %></div>
+        <a name="result" id="result" type="string"><%= result.Search[i].Title %></a>
         <img src="<%- result.Search[i].Poster %>">
+        
       </li>
       <% } %>
+        </button>
+      </form>
+      
     </ul>
     
-    <script type="text/javascript" src="/js/fisplayFunctions.js"></script>
+    <script type="text/javascript" src="/js/displayFunctions.js"></script>
     
   </body>
     
