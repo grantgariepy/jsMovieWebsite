@@ -6,49 +6,15 @@
     <title>KINO V2</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  
+  <%- include ('./Partials/navbar.ejs') %> 
   <body>
-    <!-- <a href="/views/about.ejs">About</a> -->
-    <a name="top"></a>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <a href="index.ejs" id="navbar__logo">KINO</a>
-        <div class="navbar__toggle" id="mobile-menu">
-          <span class="bar"></span> <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <form action='searchResult' method="POST"">
-              <input id="searchTerm" name="searchTerm" type="text" />
-              <input type="submit" value="Search" oninput="searchForMovie()"/>
-              <p id="requestText"></p>
-              <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
-            </form>
-          <li class="navbar__item">
-            <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
-          </li>
-          <li class="navbar__item">
-            <a href="popularTVShows" class="navbar__links" id="tvshow-page">TV Shows</a>
-          </li>
-          <li class="navbar__item">
-            <a href="top250" class="navbar__links" id="top250-page">Top 250</a>
-          </li>
-          <li class="navbar__btn">
-            <a href="#log-in" class="button" id="login">LogIn</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-   
-        
-    <div id="result"><%= result.Title %></div>
-    <div id="result"><%= result.Plot %></div>
-    <div id="result"><%= result.Year %></div>
-    <div id="result"><%= result.Director %></div>
-    <div id="result"><%= result.Metascore %></div>
-    <div id="result"><%= result.imdbRating %></div>
+      
+    <div id="resultTitle"><%= result.Title %></div>
+    <div id="resultPlot"><%= result.Plot %></div>
+    <div id="resultYear"><%= result.Year %></div>
+    <div id="resultDirector"><%= result.Director %></div>
+    <div id="resultMetaScore"><%= result.Metascore %></div>
+    <div id="resultIMDBRating"><%= result.imdbRating %></div>
     <img src="<%- result.Poster %>">
     <script type="text/javascript" src="/js/displayFunctions.js"></script>
     <script type="text/javascript" src="/main.js"></script>

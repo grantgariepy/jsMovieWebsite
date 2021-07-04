@@ -21,11 +21,13 @@
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-partials": "^0.3.0",
     "imdb-api": "^4.4.1",
     "letterboxd": "^2.0.0",
     "omdb": "^0.8.0",
     "omdb-api": "^0.1.0",
     "omdb-client": "^2.0.0",
+    "partials": "^0.1.0",
     "rotten-tomatoes": "^0.1.0",
     "xmlhttprequest": "^1.8.0"
   },

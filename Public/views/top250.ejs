@@ -6,129 +6,95 @@
     <title>KINO Top 250</title>
     <link rel="stylesheet" href="/css/style.css" />
 </head>
-<!-- Navbar Section -->
-<nav class="navbar">
-    <div class="navbar__container">
-      <a href="index" id="navbar__logo">KINO</a>
-      <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span> <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="navbar__menu">
-        <li class="navbar__item">
-          <form action='searchResult' method="POST"">
-            <input id="searchTerm" name="searchTerm" type="text" />
-            <input type="submit" value="Search" oninput="searchForMovie()"/>
-            <p id="requestText"></p>
-            <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
-          </form>
-        </li>
-        <li class="navbar__item">
-          <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
-        </li>
-        <li class="navbar__item">
-          <a href="popularTVShows" class="navbar__links" id="tvshow-page">TV Shows</a>
-        </li>
-        <li class="navbar__item">
-          <a href="#top" class="navbar__links" id="top250-page">Top 250</a>
-        </li>
-        <li class="navbar__btn">
-          <a href="#log-in" class="button" id="login">LogIn</a>
-        </li>
-      </ul>
-    </div>
-  </nav>  
-      <!-- Top 250 Section -->
-      <div class="top250" id="top250">
-        <h1>Top 250 Movies</h1>
-        
-        <div class="top250__wrapper">
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
-          <div class="top250__card">
-            <h2>Placeholder Text</h2>
-            <p></p>
-            <div class="top250__btn"><button>More Info</button></div>
-          </div>
+<%- include ('./Partials/navbar.ejs') %>
+  <body>
+    <!-- Top 250 Section -->
+    <div class="top250" id="top250">
+      <h1>Top 250 Movies</h1>
+      
+      <div class="top250__wrapper">
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
         </div>
-        
-        
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+        <div class="top250__card">
+          <h2>Placeholder Text</h2>
+          <p></p>
+          <div class="top250__btn"><button>More Info</button></div>
+        </div>
+      </div>
     </div>
-    
-    <script type="text/javascript" src="/js/displayFunctions.js"></script>
-    
-</body>
+  </body>
+  <script type="text/javascript" src="/js/displayFunctions.js"></script>
 </html>

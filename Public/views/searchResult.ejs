@@ -6,64 +6,16 @@
     <title>KINO V2</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  
+  <%- include ('./Partials/navbar.ejs') %>
   <body>
-    <!-- <a href="/views/about.ejs">About</a> -->
-    <a name="top"></a>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <a href="index" id="navbar__logo">KINO</a>
-        <div class="navbar__toggle" id="mobile-menu">
-          <span class="bar"></span> <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <form name="searchTerm" action="searchResult" method="post">
-              <label for="query">Search:</label>
-              <input type="text" name="searchTerm" id="query"/>
-              <button>Search</button>
-            </form>
-            
-            <!-- <form action='searchResult' method="POST"">
-              <input id="searchTerm" name="searchTerm" type="text" />
-              <input type="submit" value="Search" />
-              <p id="requestText"></p>
-            </form> -->
-          <li class="navbar__item">
-            <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
-          </li>
-          <li class="navbar__item">
-            <a href="popularTVShows" class="navbar__links" id="tvshow-page">TV Shows</a>
-          </li>
-          <li class="navbar__item">
-            <a href="top250" class="navbar__links" id="top250-page">Top 250</a>
-          </li>
-          <li class="navbar__btn">
-            <a href="#log-in" class="button" id="login">LogIn</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    
-
     <ul>
-        <% for (var i = 0; i < result.Search.length; i++) { %>
-        <li>
-          <a href="/movieCard/<%= result.Search[i].Title %>" name="<%= result.Search[i].Title %>"><%= result.Search[i].Title %></a>
-          <img src="<%- result.Search[i].Poster %>">
-          <!-- <p id="title" name="title"><%= result.Search[i].Title %></p>
-          <p id="imdbID" name="imdbID"><%= result.Search[i].imdbID %></p> -->
-          
-        </li>
-        <% } %>
-          </button>
-      </form>
+      <% for (var i = 0; i < result.Search.length; i++) { %>
+      <li>
+        <a href="/movieCard/<%= result.Search[i].Title %>" name="<%= result.Search[i].Title %>"><%= result.Search[i].Title %></a>
+        <img src="<%- result.Search[i].Poster %>">         
+      </li>
+      <% } %>
     </ul>
-    
-    <script type="text/javascript" src="/js/displayFunctions.js"></script>
-    
   </body>
-    
+  <script type="text/javascript" src="/js/displayFunctions.js"></script>  
 </html>

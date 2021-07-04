@@ -55,6 +55,10 @@ module.exports = function(app, omdbApi) {
       searchOMDB(title, OMDBCallback)
     })
 
+    app.get('/movieCard', (req, res) => {
+      res.render('movieCard')
+    })
+
     app.get('/movieCard/:id', (req, res) => {
       
       var id = req.params.id

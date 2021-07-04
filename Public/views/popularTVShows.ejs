@@ -6,37 +6,8 @@
     <title>KINO Shows</title>
     <link rel="stylesheet" href="/css/style.css" />
 </head>
-<!-- Navbar Section -->
-<nav class="navbar">
-    <div class="navbar__container">
-      <a href="index" id="navbar__logo">KINO</a>
-      <div class="navbar__toggle" id="mobile-menu">
-        <span class="bar"></span> <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
-      <ul class="navbar__menu">
-        <li class="navbar__item">
-          <form action='searchResult'"">
-            <input id="searchTerm" type="text" />
-            <input type="submit" value="Search" oninput="searchForMovie()"/>
-            <p id="requestText"></p>
-          </form>
-        </li>
-        <li class="navbar__item">
-          <a href="popularMovies" class="navbar__links" id="movie-page">Movies</a>
-        </li>
-        <li class="navbar__item">
-          <a href="#top" class="navbar__links" id="tvshow-page">TV Shows</a>
-        </li>
-        <li class="navbar__item">
-          <a href="top250" class="navbar__links" id="top250-page">Top 250</a>
-        </li>
-        <li class="navbar__btn">
-          <a href="#log-in" class="button" id="login">LogIn</a>
-        </li>
-      </ul>
-    </div>
-  </nav>  
+<%- include ('./Partials/navbar.ejs') %>
+  <body>
     <!-- TV SHOW Section -->
     <div class="tvshows" id="tvshows">
         <h1>Popular TV Shows</h1>
@@ -84,7 +55,8 @@
           </div>
         </div>
       </div>
-    <script type="text/javascript" src="/js/displayFunctions.js"></script>
     
-</body>
+    
+  </body>
+  <script type="text/javascript" src="/js/displayFunctions.js"></script>
 </html>

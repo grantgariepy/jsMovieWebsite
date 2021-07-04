@@ -12,43 +12,12 @@
       crossorigin="anonymous"
     />
   </head>
-  
+  <%- include ('./Partials/navbar_index.ejs') %>
   <body>
     <a name="top"></a>
     <a href="about">About</a>
     
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="navbar__container">
-        <a href="#top" id="navbar__logo">KINO</a>
-        <div class="navbar__toggle" id="mobile-menu">
-          <span class="bar"></span> <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <form action='searchResult' method="POST"">
-              <input id="searchTerm" name="searchTerm" type="text" />
-              <input type="submit" value="Search" oninput="searchForMovie()"/>
-              <p id="requestText"></p>
-              <!-- <textarea name="result" id="" cols="30" rows="10"></textarea> -->
-            </form>
-          </li>
-          <li class="navbar__item"></li>
-            <a href="#movies" class="navbar__links" id="movie-page">Movies</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#tvshows" class="navbar__links" id="tvshow-page">TV Shows</a>
-          </li>
-          <li class="navbar__item">
-            <a href="#top250" class="navbar__links" id="top250-page">Top 250</a>
-          </li>
-          <li class="navbar__btn">
-            <a href="#log-in" class="button" id="login">LogIn</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    
 
   <!-- Home Page -->
     <div class="home" id="home"></div>

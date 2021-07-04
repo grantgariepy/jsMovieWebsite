@@ -7,3 +7,5 @@ require('./config/environment.js')(app, express)
 require('./config/routes.js')(app,omdbApi)
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
+
+
