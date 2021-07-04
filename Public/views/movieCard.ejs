@@ -13,7 +13,7 @@
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="index" id="navbar__logo">KINO</a>
+        <a href="index.ejs" id="navbar__logo">KINO</a>
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
@@ -45,8 +45,13 @@
         
     <div id="result"><%= result.Title %></div>
     <div id="result"><%= result.Plot %></div>
+    <div id="result"><%= result.Year %></div>
+    <div id="result"><%= result.Director %></div>
+    <div id="result"><%= result.Metascore %></div>
+    <div id="result"><%= result.imdbRating %></div>
     <img src="<%- result.Poster %>">
     <script type="text/javascript" src="/js/displayFunctions.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
     
   </body>
     

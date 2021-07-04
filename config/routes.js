@@ -55,8 +55,11 @@ module.exports = function(app, omdbApi) {
       searchOMDB(title, OMDBCallback)
     })
 
-    app.post('/movieCard', (req, res) => {
-      var title = req.body.name
+    app.get('/movieCard/:id', (req, res) => {
+      var id = req.params.id
+      var title = req.params.id
+      console.log(id)
+      console.log(title)
       var OMDBCallback = function(err, data) {
         if (err) {
           console.log(err)
@@ -71,6 +74,6 @@ module.exports = function(app, omdbApi) {
     })
   
     app.get('/about', (req, res) => {
-      res.render('about', { text: 'hey'})
+      res.render('about')
     })
   }
