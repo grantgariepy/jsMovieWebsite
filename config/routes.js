@@ -38,7 +38,9 @@ module.exports = function(app, omdbApi) {
       res.render('popularTVShows')
     })
     
-    
+    app.get('/movieCard', (req, res) => {
+      res.render('movieCard')
+    })
 
     app.post('/searchResult', (req, res) => {
       var title = req.body.searchTerm
@@ -55,21 +57,16 @@ module.exports = function(app, omdbApi) {
       searchOMDB(title, OMDBCallback)
     })
 
-    app.get('/movieCard', (req, res) => {
-      res.render('movieCard')
-    })
-
+    
     app.get('/movieCard/:id', (req, res) => {
-      
       var id = req.params.id
       var title = req.params.id
       console.log(id)
       console.log(title)
       var OMDBCallback = function(err, data) {
         if (err) {
-          
+          console.log(err)
           res.render('')
-        
         } else {
           console.log(data)
           res.render('movieCard', {
@@ -80,7 +77,7 @@ module.exports = function(app, omdbApi) {
       getOMDBMovie(title, OMDBCallback)
     })
   
-    app.get('/about', (req, res) => {
-      res.render('about')
+    app.get('/testPage', (req, res) => {
+      res.render('testPage')
     })
   }
