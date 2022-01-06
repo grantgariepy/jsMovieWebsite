@@ -11,7 +11,7 @@ module.exports = function(app, omdbApi) {
 
     function getOMDBMovie (title, yourFunc) {
       omdbApi.get({
-        apiKey: 'f3011be7',
+        apiKey: '// INSERT API KEY HERE //',
         title: title,
         // type: 'movie'
       }, yourFunc
